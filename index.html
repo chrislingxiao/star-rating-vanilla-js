@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      *{margin:0;padding:0;}
+      body{
+        background:#f1f1f1;
+        font-size:20px;
+      }
+      .container{
+        width:1170px;
+        margin:20px auto;
+        text-align:center;
+        display: flex;
+        justify-content: center;
+        flex-direction: row-reverse;
+      }
+      
+      h1{
+        font-family: 'Playfair Display', serif;
+        font-size: 5em;
+          color: #9e9ba4;
+          text-transform: capitalize;
+          margin-bottom: 50px;
+      }
+      input[type="checkbox"]{
+        width:100%;
+        height:100%;
+        opacity:0;
+        cursor:pointer;  
+      }
+      label{
+        position:relative;
+        float: right;
+        width: 50px;
+        height: 50px;
+      }
+      .check::before, .rated::after{
+        content:'\2605';
+        font-size:60px;
+        position:absolute;
+        color:#777;
+        left:0;
+        bottom:0;
+        line-height: 50px;
+        cursor:pointer; 
+      }
+      .rated::after{
+        color:orange;
+      }
+      .check:hover::before{
+        color:orange;
+      }
+      .check:hover ~ .check::before{
+        color:orange
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">      
+      <label for="r1" class="check"><input type="checkbox" id="r1" onclick="ratingStar(event)"/></label>
+      <label for="r2" class="check"><input type="checkbox" id="r2" onclick="ratingStar(event)"/></label>
+      <label for="r3" class="check"><input type="checkbox" id="r3" onclick="ratingStar(event)"/></label>
+      <label for="r4" class="check"><input type="checkbox" id="r4" onclick="ratingStar(event)"/></label>
+      <label for="r5" class="check"><input type="checkbox" id="r5" onclick="ratingStar(event)"/></label>
+    </div>
+    
+    <script src="star-rating.js"></script>
+  </body>
+</html>
